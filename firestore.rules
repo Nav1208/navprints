@@ -1,0 +1,27 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /uploads/{uploadId} {
+      allow create: if request.resource.data.keys().hasOnly([
+        'customerName',
+        'secureUrl',
+        'originalFilename',
+        'publicId',
+        'resourceType',
+        'createdAt'
+      ])
+      && request.resource.data.customerName is string
+      && request.resource.data.customerName.size() > 0
+      && request.resource.data.customerName.size() <= 80
+      && request.resource.data.secureUrl is string
+      && request.resource.data.secureUrl.size() <= 2048
+      && request.resource.data.createdAt == request.time;
+
+      allow read: if request.auth != null
+      && request.auth.token.email == 'YOUR_ADMIN_EMAIL@example.com';
+
+      allow update, delete: if false;
+    }
+  }
+}

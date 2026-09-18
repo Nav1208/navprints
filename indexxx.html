@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Upload a file for Navprints.">
-    <title>Navprints</title>
-
-    <link rel="icon" type="image/png" href="pfp.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>mamamo</title>
+    
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -22,9 +17,6 @@
                 500: '#2563eb',
                 600: '#1d4ed8'
               }
-            },
-            fontFamily: {
-              sans: ['Manrope', 'sans-serif']
             }
           }
         }
@@ -34,32 +26,40 @@
     <link rel="stylesheet" href="styles.css">
   </head>
 
-  <body class="min-h-screen bg-black text-white font-sans antialiased flex flex-col">
-    <header class="mx-auto w-full max-w-6xl px-6 py-6">
-      <a href="index.html" class="inline-flex items-center gap-2.5">
-        <span class="grid h-8 w-8 place-items-center rounded-full border-2 border-white"></span>
-        <span data-business-name class="text-base font-bold tracking-tight">Navprints</span>
-      </a>
-    </header>
+  <body class="min-h-screen bg-slate-50 text-slate-900">
+    <main class="mx-auto flex min-h-screen max-w-5xl flex-col px-5 py-6 sm:px-8">
+      <header class="flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 font-bold">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-600 text-lg text-white">
+            N
+          </span>
+          <span data-business-name>Navprints</span>
+        </a>
+          <span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-brand-600">
+            Fast &amp; local
+          </span>
+      </header>
 
-    <main class="flex flex-1 flex-col items-center justify-center px-6 text-center">
-      <h1 class="max-w-xl text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-6xl">
-        Print your files today.
-      </h1>
-      <p class="mt-5 max-w-sm text-base text-white/60">
-        Upload a file, add your name, and we'll have it ready to print.
-      </p>
+      <section class="flex flex-1 flex-col justify-center py-16 sm:py-24">
+        <div class="max-w-2xl">
+          <p class="mb-3 font-semibold text-brand-600">PRINTING MADE SIMPLE</p>
+          <h1 class="text-4xl font-extrabold tracking-tight text-slate-950 sm:text-6xl">Send your file. We’ll handle the print.</h1>
+          <p class="mt-5 max-w-xl text-lg leading-8 text-slate-600">Upload photos, PDFs, documents, and more. Add your name so we can match your print order when you arrive.</p>
+          <button id="startUpload" class="mt-9 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-2xl bg-brand-600 px-6 py-4 text-base font-bold text-white shadow-lg shadow-blue-200 hover:bg-brand-500 sm:w-auto">
+            ↑ Upload file for printing
+          </button>
+          <p class="mt-4 text-sm text-slate-500">Files are held for up to 7 days. Please collect your order promptly.</p>
+        </div>
 
-      <button id="startUpload" class="mt-9 inline-flex min-h-14 items-center justify-center rounded-full bg-white px-8 py-4 text-base font-bold text-black hover:bg-white/90">
-        Upload file
-      </button>
+        <div class="mt-12 grid grid-cols-3 gap-3 text-center text-sm text-slate-600 sm:max-w-xl">
+          <div class="rounded-2xl bg-white p-4 shadow-sm"><b class="block text-lg text-slate-900">1</b>Add your name</div>
+          <div class="rounded-2xl bg-white p-4 shadow-sm"><b class="block text-lg text-slate-900">2</b>Choose files</div>
+          <div class="rounded-2xl bg-white p-4 shadow-sm"><b class="block text-lg text-slate-900">3</b>We print</div>
+        </div>
+      </section>
 
-      <p class="mt-4 text-xs text-white/40">Files are held for 7 days.</p>
+      <footer class="text-center text-sm text-slate-400">© <span data-year></span> <span data-business-name>Navprints</span></footer>
     </main>
-
-    <footer class="border-t border-white/10 py-6">
-      <p class="text-center text-xs text-white/40">© <span data-year></span> <span data-business-name>Navprints</span></p>
-    </footer>
 
     <div id="nameModal" class="fixed inset-0 z-20 hidden items-end bg-slate-950/40 p-4 sm:items-center sm:justify-center">
       <div class="w-full max-w-md rounded-3xl bg-white p-6 shadow-2xl">
