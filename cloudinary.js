@@ -2,7 +2,7 @@ window.CloudinaryService = (() => {
   const count = () => Number(sessionStorage.getItem('printUploadCount') || 0);
   const verifyRecaptcha = async () => {
     if (!APP_CONFIG.recaptchaSiteKey || APP_CONFIG.recaptchaSiteKey.includes('YOUR_')) throw new Error('Add your reCAPTCHA site key in js/config.js.');
-    await new Promise((resolve, reject) => { if (window.grecaptcha) return resolve(); const script = document.createElement('script'); script.src = `https://www.google.com/recaptcha/api.js?render=6Ldmp8EtAAAAAOlIxTtdNbk3Bach1f9QfpM_qNXU}`; script.onload = resolve; script.onerror = () => reject(new Error('Could not load spam protection.')); document.head.appendChild(script); });
+    await new Promise((resolve, reject) => { if (window.grecaptcha) return resolve(); const script = document.createElement('script'); script.src = `https://www.google.com/recaptcha/api.js?render=6Ldmp8EtAAAAAOlIxTtdNbk3Bach1f9QfpM_qNXU`; script.onload = resolve; script.onerror = () => reject(new Error('Could not load spam protection.')); document.head.appendChild(script); });
     return grecaptcha.execute(APP_CONFIG.recaptchaSiteKey, { action: 'print_upload' });
   };
   return { async upload(customerName) {
