@@ -76,7 +76,7 @@ window.CloudinaryService = (() => {
         resourceType: 'auto',
         maxFiles: APP_CONFIG.maxSessionUploads - uploadCount(),
         clientAllowedFormats: [
-          'pdf', 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx',
+          'pdf','c','py','cpp', 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx',
           'jpg', 'jpeg', 'png', 'webp', 'mp4'
         ],
         tags: ['expires_in_7_days']
